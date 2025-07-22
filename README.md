@@ -14,16 +14,22 @@ This framework implements a phased approach to software development:
 
 ```
 ai_spec-driven-design/
-├── rules/
-│   ├── generic/                 # Platform-agnostic rules
+├── generic/                     # Platform-agnostic templates
+│   ├── rules/
 │   │   └── enforce-spect.md     # Core steering rules for any AI assistant
-│   └── windsurf/                # Windsurf-specific rules
-│       └── enforce-spect.md     # Windsurf-specific steering rules
-├── commands/                    # Windsurf workflow commands
-│   ├── spec-init.md             # Initialize new spec-driven project
-│   ├── spec-init-jira.md        # Initialize with Jira integration
-│   ├── spec-update.md           # Update existing specifications
-│   └── spec-execute-task.md     # Execute specific implementation tasks
+│   └── commands/                # Generic workflow templates
+│       ├── spec-init.md         # Initialize new spec-driven project
+│       ├── spec-init-jira.md    # Initialize with Jira integration
+│       ├── spec-update.md       # Update existing specifications
+│       └── spec-execute-task.md # Execute specific implementation tasks
+├── windsurf/                    # Windsurf-specific integrations
+│   ├── rules/
+│   │   └── enforce-spect.md     # Windsurf-specific steering rules
+│   └── workflows/               # Windsurf workflow commands
+│       ├── spec-init.md         # Initialize new spec-driven project
+│       ├── spec-init-jira.md    # Initialize with Jira integration
+│       ├── spec-update.md       # Update existing specifications
+│       └── spec-execute-task.md # Execute specific implementation tasks
 ├── claude-code/                 # Claude Code integrations
 │   ├── slash-commands/          # Custom slash commands
 │   │   ├── spec-init.md         # /spec-init command
@@ -45,18 +51,18 @@ ai_spec-driven-design/
 1. **Install Rules** (Steering Files):
    ```bash
    # Copy rules to your project's Windsurf configuration
-   cp rules/windsurf/enforce-spect.md .windsurf/rules/
+   cp windsurf/rules/enforce-spect.md .windsurf/rules/
    ```
 
-2. **Install Commands** (Workflows):
+2. **Install Workflows**:
    ```bash
-   # Copy all command workflows
-   cp commands/*.md .windsurf/workflows/
+   # Copy all workflow commands
+   cp windsurf/workflows/*.md .windsurf/workflows/
    ```
 
 3. **Verify Installation**:
    - Rules should appear in `.windsurf/rules/enforce-spect.md`
-   - Commands should appear in `.windsurf/workflows/spec-*.md`
+   - Workflows should appear in `.windsurf/workflows/spec-*.md`
 
 ### For Claude Code
 
@@ -85,7 +91,13 @@ ai_spec-driven-design/
    mkdir -p .ai-assistant/rules/
    
    # Copy generic rules
-   cp rules/generic/enforce-spect.md .ai-assistant/rules/
+   cp generic/rules/enforce-spect.md .ai-assistant/rules/
+   ```
+
+2. **Install Generic Commands**:
+   ```bash
+   # Copy generic workflow templates
+   cp generic/commands/*.md .ai-assistant/workflows/
    ```
 
 ### For AWS Q CLI
@@ -146,7 +158,7 @@ ai_spec-driven-design/
 **Note**: The slash commands are helpful tools, but standard prompting will also follow these rules when `CLAUDE.md` is present in your project. You don't need to use the commands exclusively.
 
 #### Cursor Users
-1. **Setup Project Rules**: Copy `rules/generic/enforce-spect.md` content into Cursor Rules
+1. **Setup Project Rules**: Copy `generic/rules/enforce-spect.md` content into Cursor Rules
 2. **Initialize Projects**: Use Agent Mode with natural language prompts following the phased approach
 3. **Execute Tasks**: Reference specifications in chat and use Agent Mode for autonomous implementation
 
