@@ -1,7 +1,8 @@
-# Name: spec-task-execute
+---
+description: Executes a spec task, following execution rules.
+---
 
-## Description
-Executes a spec task, following execution rules.
+# Name: spec-task-execute
 
 ## Parameters
 - Name: spec-path  

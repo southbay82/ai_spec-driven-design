@@ -1,7 +1,8 @@
-# Name: spec-init
+---
+description: Initializes a new spec interactively in phased manner with approvals.
+---
 
-## Description
-Initializes a new spec interactively in phased manner with approvals.
+# Name: spec-init
 
 ## Parameters
 None

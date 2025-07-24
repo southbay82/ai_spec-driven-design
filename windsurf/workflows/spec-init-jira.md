@@ -1,7 +1,8 @@
-# Name: spec-jira
+---
+description: Builds a spec from a JIRA ticket in phased manner with approvals, using Atlassian MCP or user input.
+---
 
-## Description
-Builds a spec from a JIRA ticket in phased manner with approvals, using Atlassian MCP or user input.
+# Name: spec-jira
 
 ## Parameters
 - Name: jira-id  

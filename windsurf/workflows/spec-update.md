@@ -1,7 +1,8 @@
-# Name: spec-update
+---
+description: Updates existing spec, targeting phases with approvals.
+---
 
-## Description
-Updates existing spec, targeting phases with approvals.
+# Name: spec-update
 
 ## Parameters
 - Name: spec-path  
