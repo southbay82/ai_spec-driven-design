@@ -68,4 +68,4 @@ This project follows a structured spec-driven development approach. These rules 
 
 ---
 
-*Use the custom slash commands `/spec-init`, `/spec-execute`, and `/spec-update` to maintain adherence to these rules throughout development.*
+*Use the custom slash commands `/spec-init`, `/spec-init-jira`, `/spec-execute-task`, and `/spec-update` to maintain adherence to these rules throughout development.*
