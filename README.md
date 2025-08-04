@@ -31,10 +31,11 @@ ai_spec-driven-design/
 │       ├── spec-update.md       # Update existing specifications
 │       └── spec-execute-task.md # Execute specific implementation tasks
 ├── claude-code/                 # Claude Code integrations
-│   ├── slash-commands/          # Custom slash commands
+│   ├── commands/                # Custom commands
 │   │   ├── spec-init.md         # /spec-init command
-│   │   ├── spec-execute.md      # /spec-execute command
-│   │   └── spec-update.md       # /spec-update command
+│   │   ├── spec-init-jira.md    # /spec-init-jira command
+│   │   ├── spec-update.md       # /spec-update command
+│   │   └── spec-execute-task.md # /spec-execute-task command
 │   └── templates/
 │       └── CLAUDE.md            # Template project rules file
 └── aws-q-cli/                   # AWS Q CLI integrations
@@ -68,9 +69,9 @@ ai_spec-driven-design/
 
 1. **Install Slash Commands**:
    ```bash
-   # Copy slash commands to your Claude Code settings
+   # Copy commands to your Claude Code settings
    # (Adjust path based on your Claude Code configuration)
-   cp claude-code/slash-commands/*.md ~/.claude/slash-commands/
+   cp claude-code/commands/*.md ~/.claude/commands/
    ```
 
 2. **Install Project Rules**:
@@ -80,7 +81,7 @@ ai_spec-driven-design/
    ```
 
 3. **Verify Installation**:
-   - Slash commands should be available: `/spec-init`, `/spec-execute`, `/spec-update`
+   - Commands should be available: `/spec-init`, `/spec-init-jira`, `/spec-update`, `/spec-execute-task`
    - Project rules should be active via `CLAUDE.md` in your project root
 
 ### For Other AI Coding Assistants
@@ -133,7 +134,7 @@ ai_spec-driven-design/
 ### For Other AI Coding Assistants
 
 1. **Adaptation Guide**:
-   - **Cursor**: Create Cursor Rules for workflow guidance (custom slash commands not yet supported)
+   - **Cursor**: Create Cursor Rules for workflow guidance (custom commands not yet supported)
    - **Other Tools**: Adapt the markdown templates to your platform's format
 
 3. **Customization**:
@@ -152,7 +153,7 @@ ai_spec-driven-design/
 
 #### Claude Code Users
 1. **Initialize a New Project**: Run `/spec-init` to create initial specifications
-2. **Execute Tasks**: Run `/spec-execute spec-path:/spec/feature-name/ task-id:1.1` to implement features
+2. **Execute Tasks**: Run `/spec-execute-task spec-path:/spec/feature-name/ task-id:1.1` to implement features
 3. **Update Specifications**: Run `/spec-update` when requirements or design changes
 
 **Note**: The slash commands are helpful tools, but standard prompting will also follow these rules when `CLAUDE.md` is present in your project. You don't need to use the commands exclusively.
@@ -200,7 +201,7 @@ ai_spec-driven-design/
 3. Generate design.md → Architecture and technical decisions
 4. Review/approve design → Proceed to tasks phase  
 5. Generate tasks.md → Numbered implementation checklist
-6. Execute tasks → Use /spec-execute or standard prompting for each item
+6. Execute tasks → Use /spec-execute-task or standard prompting for each item
 ```
 
 #### Cursor Workflow
